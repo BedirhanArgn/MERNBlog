@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
-import { DialogContentText, makeStyles, makeSyles, Menu } from "@material-ui/core";
-import { Button, TextField, Select, Input, MenuItem, Dialog, DialogActions, DialogContent, DiaglogContentText, DialogTitle } from "@material-ui/core";
+import { DialogContentText, makeStyles } from "@material-ui/core";
+import { Button, TextField, Select, Input, MenuItem, Dialog, DialogActions, DialogContent, DialogTitle } from "@material-ui/core";
 import { useForm, Controller } from "react-hook-form"
 import { createPost } from "../actions/post";
 import FileBase64 from "react-file-base64";

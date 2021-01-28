@@ -36,7 +36,7 @@ const PostsList = () => {
             <Grid container spacing={2} alignContent="stretch">
                 {
                     posts.length > 0 && posts.map((post) => (
-                        <Grid item key={post?.id} xs={12} md={calculateMd()}>
+                        <Grid item key={post._id} xs={12} md={calculateMd()}>
                             <Post {...post} />
                         </Grid>
                     ))

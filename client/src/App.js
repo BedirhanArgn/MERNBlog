@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 import PostsList from './components/PostsList';
 import AddPostForm from './components/AddPostForm';
 import { fetchPost } from "./actions/post";
+import PostDetail from './components/PostDetail';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -53,7 +54,7 @@ const App = () => {
 
             />
             <Typography variant="h6" color="secondary" className={classes.title}>
-              <a href="http://localhost:3000/posts">MERN Blog</a>
+              <a href="http://localhost:3000/posts" style={{ textDecoration: "none" }}>MERN Blog</a>
             </Typography>
             <Button color="primary" variant="outlined" startIcon={<PenIcon />} onClick={handleOpen}>Blog Yaz </Button>
           </Toolbar>
@@ -64,6 +65,7 @@ const App = () => {
             <Router>
               <Switch>
                 <Route exact path="/posts" component={PostsList} />
+                <Route exact path="/posts/:id" component={PostDetail} />
               </Switch>
               <Redirect from="/" to="/posts" />
             </Router>
