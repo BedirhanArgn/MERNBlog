@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv"
-import postRoutes from './routes/posts.js'
+import postRoutes from "./routes/posts.js";
 const app = express();
 dotenv.config();
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
@@ -15,11 +15,8 @@ app.get("/", (req, res) => {
         message: "messages"
     });
 
-
 })
 app.use("/posts", postRoutes);
-
-
 
 const PORT = process.env.PORT || 5000;
 const CONNECTION_URL = process.env.CONNECTION_URL
@@ -32,4 +29,4 @@ mongoose.connect(CONNECTION_URL, {
     app.listen(PORT, () => {
         console.log(`Server is running port ${PORT}`)
     })
-})
+}).catch(() => alert("errror"))
